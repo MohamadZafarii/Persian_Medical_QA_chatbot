@@ -54,6 +54,7 @@ You will need to create a .env file in the project root and add your Groq API Ke
 
 ```
 GROQ_API_KEY=your_api_key_here
+HUGGINGFACEHUB_API_TOKEN=your_api_key_here
 ```
 Be sure to replace your_api_key_here with the actual key obtained from Groq.
 
