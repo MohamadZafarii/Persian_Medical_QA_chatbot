@@ -2,6 +2,7 @@ from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from loading_dataset import SplitDataset
 import os
+import torch
 
 class VectorDB:
     """
@@ -9,7 +10,7 @@ class VectorDB:
     The database can be persisted to a specified path and loaded later to avoid recomputing embeddings.
     """
 
-    def __init__(self, embed_name: str, device: str, dataset_path: str, db_path: str) -> None:
+    def __init__(self, embed_name: str,dataset_path: str, db_path: str) -> None:
         """
         Initializes the VectorDB class with the given embedding model, device, dataset path, and database path.
 
@@ -19,7 +20,7 @@ class VectorDB:
         :param db_path: Path to save or load the FAISS index for persistence.
         """
         self.embes_name = embed_name
-        self.device = device
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.dataset_path = dataset_path
         self.db_path = db_path  # Path to save/load the FAISS database
 

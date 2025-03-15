@@ -12,11 +12,10 @@ grok_api = os.getenv("GROQ_API_KEY")
 db_path = os.getenv("DB_PATH")
 model_name = os.getenv("MODEL_NAME")
 embed_name = os.getenv("EMBEDD_NAME")
-device = os.getenv("DEVICE" , "cpu")
 dataset_path = os.getenv("DATASET_PATH")
 
 # Initialize the vector database
-vector_db = VectorDB(embed_name=embed_name, device=device, dataset_path=dataset_path, db_path=db_path)
+vector_db = VectorDB(embed_name=embed_name, dataset_path=dataset_path, db_path=db_path)
 
 # Initialize the model
 model_init = ModelInit(db_path=db_path, groq_api_key=grok_api, model_name=model_name, vector_db=vector_db)

@@ -105,8 +105,9 @@ class ModelInit:
         return (
             "You are an assistant for question-answering tasks. "
             "Use the following pieces of retrieved context to answer the question. If you don't know the answer, say that you don't know. "
-            "Use three sentences maximum and keep the answer concise."
+            "Use one paragraph  maximum and keep the answer concise."
             "answer the question in persian."
+            "the thinking process be in persian"
             "\n\n"
         )
 
@@ -133,7 +134,7 @@ class ModelInit:
         """
         self._load_db()
         self._create_model()
-        retriever = self.db.as_retriever(search_type="similarity",search_kwargs={"k":3})
+        retriever = self.db.as_retriever(search_type="similarity",search_kwargs={"k":6})
         return create_history_aware_retriever(retriever=retriever, prompt=self.contextualize_q_prompt,llm=self.model)
 
     def generate_chain(self) -> RunnableWithMessageHistory:
