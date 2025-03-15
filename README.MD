@@ -75,6 +75,16 @@ This will launch the chatbot interface in your web browser, where you can start 
 **Groq API Integration:** The use of the Groq API enhances the chatbot's computational efficiency. The API speeds up large data processing, making the system suitable for high-traffic applications or large datasets.
 
 **LangChain:** The integration of LangChain facilitates the orchestration of large language model (LLM) interactions. LangChain enables multi-step reasoning, chain of thought processes, and effective management of LLM prompts to handle more complex medical inquiries. This is critical for enabling the chatbot to break down intricate queries and generate detailed, accurate responses.
+## 6. Technologies Used
+**Python:** The programming language used for building the chatbot.
+**Streamlit:** The web framework used to build the user interface.
+**FAISS:** A library developed by Facebook for efficient similarity search and clustering of high-dimensional vectors.
+**Hugging Face:** Provides pre-trained NLP models for embedding medical data.
+**Groq API:** For accelerating the data processing and model inference in real-time.
+**LangChain:** A framework for orchestrating large language model (LLM) interactions, allowing for dynamic reasoning and multi-step prompts in chatbot conversations.
+
+## Model Used
+The chatbot leverages the **deepseek-r1-distill-qwen-32b** model from Groq for high-performance reasoning and natural language generation. This model is designed to handle complex, multi-step queries with efficient computations, ensuring accurate and relevant responses in the medical domain.
 
 ## Benefits of the System
 **Scalable**: The use of FAISS and Groq allows this chatbot to scale effortlessly, processing thousands of queries in real-time without compromising performance.
