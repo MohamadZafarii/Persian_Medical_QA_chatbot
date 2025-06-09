@@ -182,7 +182,4 @@ class ModelInit:
         return conversational_rag_chain
 
 
-# Store for session histories
-store = {}
-
 
